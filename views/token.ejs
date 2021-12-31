@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <%- include("./include/head"); %>
+</head>
+
+<body id="token">
+    <%- include("./include/header"); %>
+    <div class="container mt-5">
+
+        <div class="row pt-5">
+            <div class="col-md-12">
+                <h4><b>Token detail</b></h4>
+            </div>
+            <div class="col-md-8" id="create-token-form">
+
+                <form id="create-token-form" action="#" method="POST" name="create-token-form">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="control-label" for="name">Token name:</label>
+                                <input type="text" class="form-control" id="name" required="required" placeholder="Token name" name="name">
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label class="control-label" for="symbol">Symbol:</label>
+                                <input type="text" class="form-control" id="symbol" required="required" placeholder="Symbol" name="symbol">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="control-label" for="network">Network:</label>
+                                <select class="form-control" name="network" required="required" id="network">
+                                    <option selected value="bsc">BSC</option>
+                                    <option value="eth">ETH</option>
+                                    <option value="matic">MATIC</option>
+                                    <option value="sol">SOL</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="control-label" for="total_supply">Total Supply:</label>
+                                <input type="number" class="form-control" id="total_supply" required="required" placeholder="Total Supply" name="total_supply">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="control-label" for="init_supply">Initial Supply:</label>
+                                <input type="number" class="form-control" id="init_supply" required="required" placeholder="Initial Supply" name="syinit_supplymbol">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h4><b>Optional</b></h4>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-4 my-auto">
+                            <div class="form-group">
+                                <div class="checkbox">
+                                    <label><input type="checkbox" name="mint"> Mint</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 my-auto">
+                            <div class="form-group">
+                                <div class="checkbox">
+                                    <label><input type="checkbox" name="burn"> Burn</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 my-auto">
+                            <div class="form-group">
+                                <div class="checkbox">
+                                    <label><input type="checkbox" name="staking"> Staking</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </form>
+
+            </div>
+            <div class="col-md-4" id="create-token-fee">
+                <h4><b>Payment detail</b></h4>
+                <div class="card text-center">
+                    <div class="card-body">
+                        <div class="list-group payment-box list-group-flush">
+                            <div class="list-group-item d-flex justify-content-between">
+                                <span>
+                                    Commission Fee:
+                                    <svg viewBox="0 0 16 16" width="1em" height="1em" focusable="false" role="img" aria-label="info circle" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi-info-circle b-icon bi"><g><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path><path d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"></path></g></svg></span> <span class="badge badge-success">
+                                    0.035 ETH
+                                </span>
+                            </div>
+                            <div class="list-group-item d-flex justify-content-between">
+                                <span>
+                                    Gas Fee:
+                                    <svg viewBox="0 0 16 16" width="1em" height="1em" focusable="false" role="img" aria-label="info circle" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi-info-circle b-icon bi"><g><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path><path d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"></path></g></svg></span> <span class="badge badge-info">
+                                    0.002 ETH
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group mt-3">
+                    <button type="submit" id="confirm_token" class="btn btn-primary w-100 pt-3 pb-3">Confirm</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row pt-5">
+            <div class="col-md-12">
+                <h4><b>Your Available Tokens</b></h4>
+                <table class="table table-striped">
+                    <tr>
+                        <td>Name</td>
+                        <td>Symbol</td>
+                        <td>TotalSupply</td>
+                        <td>Available in wallet</td>
+                        <td>Network</td>
+                        <td>Burn</td>
+                        <td>Mint</td>
+                        <td>Staking</td>
+                        <td>ABI</td>
+                    </tr>
+                    <% token_list.forEach( (token) => { %>
+                    <tr>
+                        <td><%= token.name %></td>
+                        <td><%= token.symbol %></td>
+                        <td><%= token.total_supply %> <%= token.symbol %></td>
+                        <td>732.035.000 JSPR</td>
+                        <td>Binance Smart Chain</td>
+                        <td>
+                            <% if (token.can_burn) { %>
+                            <i class="fas fa-check"></i>
+                            <% } %>
+                        </td>
+                        <td>
+                            <% if (token.can_mint) { %>
+                            <i class="fas fa-check"></i>
+                            <% } %>
+                        </td>
+                        <td>
+                            <% if (token.can_staking) { %>
+                            <i class="fas fa-check"></i>
+                            <% } %>
+                        </td>
+                        <td><a href="/">Download ABI</a></td>
+                    </tr>
+                    <% }) %>
+
+                    <tr>
+                        <td>Gangnam Token</td>
+                        <td>GANG</td>
+                        <td>1.995.000.000 GANG</td>
+                        <td>732.035.000 GANG</td>
+                        <td>Binance Smart Chain</td>
+                        <td><i class="fas fa-check"></i></td>
+                        <td></td>
+                        <td><i class="fas fa-check"></i></td>
+                        <td><a href="/">Download ABI</a></td>
+                    </tr>
+                    <tr>
+                        <td>Orion Token</td>
+                        <td>ORI</td>
+                        <td>754.656.000 ORI</td>
+                        <td>12.460.000 ORI</td>
+                        <td>Binance Smart Chain</td>
+                        <td><i class="fas fa-check"></i></td>
+                        <td><i class="fas fa-check"></i></td>
+                        <td></td>
+                        <td><a href="/">Download ABI</a></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
